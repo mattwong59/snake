@@ -6,7 +6,6 @@ const cols = canvas.width/scale;
 
 let snake;
 
-
 (function setup() {
     snake = new Snake;
 
@@ -16,4 +15,9 @@ let snake;
         snake.draw();
     }, 250);
 }());
+
+window.addEventListener('keydown',((e) => {
+        snake.changeDirection(e.key);    
+    }
+));
 
