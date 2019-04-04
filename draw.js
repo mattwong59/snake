@@ -13,6 +13,9 @@ let snake;
         ctx.clearRect(0,0,canvas.width,canvas.height);
         snake.update();
         snake.draw();
+        if (snake.x > canvas.width) {
+            snake.x = 0;
+        }
     }, 250);
 }());
 
@@ -20,4 +23,7 @@ window.addEventListener('keydown',((e) => {
         snake.changeDirection(e.key);    
     }
 ));
+
+
+
 
