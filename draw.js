@@ -4,10 +4,16 @@ const scale = 10;
 const rows = canvas.height/scale;
 const cols = canvas.width/scale;
 
-const snake = new Snake;
+let snake;
 
 
 (function setup() {
-    snake.draw();
+    snake = new Snake;
+
+    window.setInterval(() => {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        snake.update();
+        snake.draw();
+    }, 250);
 }());
 
