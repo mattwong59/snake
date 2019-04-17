@@ -16,6 +16,15 @@ let snake;
         if (snake.x > canvas.width) {
             snake.x = 0;
         }
+        if (snake.x < 0) {
+            snake.x = canvas.width;
+        }
+        if (snake.y > canvas.height) {
+            snake.y = 0;
+        }
+        if (snake.y < 0) {
+            snake.y = canvas.height;
+        }
     }, 250);
 }());
 

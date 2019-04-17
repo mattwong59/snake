@@ -18,19 +18,19 @@ class Snake {
 
     changeDirection(direction) {
         switch(direction) {
-            case 'w':
+            case 'ArrowUp':
                 this.xSpeed = 0;
                 this.ySpeed = -scale * 1;
                 break;
-            case 's':
+            case 'ArrowDown':
                 this.xSpeed = 0;
                 this.ySpeed = scale * 1;
                 break;
-            case 'd':
+            case 'ArrowRight':
                 this.xSpeed = scale * 1;
                 this.ySpeed = 0;
                 break;
-            case 'a':
+            case 'ArrowLeft':
                 this.xSpeed = -scale * 1;
                 this.ySpeed = 0;
                 break;
