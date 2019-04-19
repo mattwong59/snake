@@ -4,6 +4,8 @@ const scale = 10;
 const rows = canvas.height/scale;
 const cols = canvas.width/scale;
 
+
+let fruitColours = ['red', 'blue', 'yellow', 'green']
 let snake;
 let fruit;
 
@@ -17,9 +19,11 @@ let fruit;
         snake.update();
         snake.draw();
         fruit.draw();
+        console.log('fruit', fruit);
 
         if (snake.eat(fruit)) {
             fruit.getRandomLocation();
+            fruit.getRandomFruit();
         }
 
         if (snake.x > canvas.width) {

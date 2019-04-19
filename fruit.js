@@ -5,11 +5,17 @@ class Fruit {
     }
 
     getRandomLocation() {
-        this.x = Math.floor(Math.random() * rows - 1) * scale;
-        this.y = Math.floor(Math.random() * cols - 1) * scale;
+        this.x = Math.floor(Math.random() * rows ) * scale;
+        this.y = Math.floor(Math.random() * cols ) * scale;
     }
 
-    draw() {
+    getRandomFruit() {
+        for(let i=0; i < fruitColours.length -1; i++) {
+            ctx.fillStyle = fruitColours[i];
+        }
+    }
+
+    draw() {    
         ctx.fillStyle = '#f45f42';
         ctx.fillRect(this.x,this.y,scale, scale);
     }

@@ -52,7 +52,12 @@ class Snake {
 
     eat(fruit) {
         if(snake.x === fruit.x && snake.y === fruit.y) {
+            console.log('x', this.x);
+            console.log('y', this.y);
             this.total++;
+            // this.x += this.xSpeed * 2;
+            // this.y += this.ySpeed * 2;
+            
             return true;
         }
         return false;
