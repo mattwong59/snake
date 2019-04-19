@@ -5,26 +5,39 @@ const rows = canvas.height/scale;
 const cols = canvas.width/scale;
 
 let snake;
+let fruit;
 
 (function setup() {
     snake = new Snake;
+    fruit= new Fruit;
+    fruit.getRandomLocation();
 
     window.setInterval(() => {
         ctx.clearRect(0,0,canvas.width,canvas.height);
         snake.update();
         snake.draw();
+        fruit.draw();
+
+        if (snake.eat(fruit)) {
+            fruit.getRandomLocation();
+        }
+
         if (snake.x > canvas.width) {
             snake.x = 0;
         }
+
         if (snake.x < 0) {
             snake.x = canvas.width;
         }
+
         if (snake.y > canvas.height) {
             snake.y = 0;
         }
+
         if (snake.y < 0) {
             snake.y = canvas.height;
         }
+
     }, 250);
 }());
 
