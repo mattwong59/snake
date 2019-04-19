@@ -19,28 +19,14 @@ let fruit;
         snake.update();
         snake.draw();
         fruit.draw();
-        console.log('fruit', fruit);
+        // console.log('fruit', fruit);
 
         if (snake.eat(fruit)) {
             fruit.getRandomLocation();
             fruit.getRandomFruit();
         }
-
-        if (snake.x > canvas.width) {
-            snake.x = 0;
-        }
-
-        if (snake.x < 0) {
-            snake.x = canvas.width;
-        }
-
-        if (snake.y > canvas.height) {
-            snake.y = 0;
-        }
-
-        if (snake.y < 0) {
-            snake.y = canvas.height;
-        }
+        
+        snake.checkCollision();
 
     }, 250);
 }());
