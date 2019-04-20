@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 const scale = 10;
 const rows = canvas.height/scale;
 const cols = canvas.width/scale;
-
+const score = document.getElementById('score');
 
 let fruitColours = ['red', 'blue', 'yellow', 'green']
 let snake;
@@ -25,7 +25,8 @@ let fruit;
             fruit.getRandomLocation();
             fruit.getRandomFruit();
         }
-        
+
+        score.innerHTML =  `SCORE: ${snake.total}`;
         snake.checkCollision();
 
     }, 250);

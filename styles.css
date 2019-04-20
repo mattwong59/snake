@@ -1,5 +1,17 @@
-div {
+body {
+    margin: 0;
+    background-image: linear-gradient(to bottom right, #23e9bb , #056a7e);
+}
+
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+div#score {
+    font-family: monospace;
 }
